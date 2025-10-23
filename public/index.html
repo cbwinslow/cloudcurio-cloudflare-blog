@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudCurio - AI Knowledge Base & Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="brand">
+                    <h1>CloudCurio</h1>
+                    <p class="tagline">AI-Powered Knowledge Base & Blog</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#knowledge-base">Knowledge Base</a></li>
+                    <li><a href="#ai-chat">AI Chat</a></li>
+                    <li><a href="#research">Research Tools</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Welcome to CloudCurio</h2>
+                    <p>Your comprehensive platform for AI-powered knowledge management, blogging, and research</p>
+                    <div class="hero-features">
+                        <div class="feature-card">
+                            <h3>📝 Blog Platform</h3>
+                            <p>Publish and manage your writing samples and blog posts</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>🧠 Knowledge Base</h3>
+                            <p>Store and retrieve information with vector search</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>🤖 AI Chat</h3>
+                            <p>Interactive chatbot with RAG capabilities</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>🔬 Research Tools</h3>
+                            <p>Deep research and analysis powered by AI agents</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2>Blog Posts</h2>
+                <div class="blog-controls">
+                    <button id="refresh-posts" class="btn btn-primary">Refresh Posts</button>
+                    <button id="generate-post" class="btn btn-secondary">Generate New Post</button>
+                </div>
+                <div id="blog-posts" class="blog-grid">
+                    <p>Loading blog posts...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base Section -->
+        <section id="knowledge-base" class="section">
+            <div class="container">
+                <h2>Knowledge Base</h2>
+                <div class="kb-interface">
+                    <div class="kb-upload">
+                        <h3>Add to Knowledge Base</h3>
+                        <textarea id="kb-content" placeholder="Enter content to add to knowledge base..." rows="6"></textarea>
+                        <input type="text" id="kb-title" placeholder="Title">
+                        <button id="add-to-kb" class="btn btn-primary">Add to Knowledge Base</button>
+                    </div>
+                    <div class="kb-search">
+                        <h3>Search Knowledge Base</h3>
+                        <input type="text" id="kb-search-query" placeholder="Search...">
+                        <button id="search-kb" class="btn btn-primary">Search</button>
+                        <div id="kb-results" class="results"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat Section -->
+        <section id="ai-chat" class="section">
+            <div class="container">
+                <h2>AI Chat with RAG</h2>
+                <div class="chat-container">
+                    <div id="chat-messages" class="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Ask anything..." />
+                        <button id="send-message" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Tools Section -->
+        <section id="research" class="section">
+            <div class="container">
+                <h2>Deep Research Tools</h2>
+                <div class="research-interface">
+                    <div class="research-input">
+                        <h3>Start Research Task</h3>
+                        <textarea id="research-query" placeholder="Enter your research topic or question..." rows="4"></textarea>
+                        <select id="research-type">
+                            <option value="comprehensive">Comprehensive Research</option>
+                            <option value="quick">Quick Analysis</option>
+                            <option value="comparison">Comparison Study</option>
+                            <option value="deep-dive">Deep Dive</option>
+                        </select>
+                        <button id="start-research" class="btn btn-primary">Start Research</button>
+                    </div>
+                    <div id="research-results" class="research-results">
+                        <h3>Research Results</h3>
+                        <div id="research-output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CloudCurio. Powered by Cloudflare Workers, D1, Vectorize, and AI.</p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

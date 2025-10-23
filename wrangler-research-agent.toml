@@ -1,0 +1,19 @@
+name = "research-agent"
+main = "src/workers/research-agent.js"
+compatibility_date = "2024-10-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "knowledge_base"
+database_id = "local-db-id"
+
+# AI binding
+[ai]
+binding = "AI"
+
+# Queue consumer for research tasks
+[[queues.consumers]]
+queue = "research-queue"
+max_batch_size = 5
+max_batch_timeout = 60
