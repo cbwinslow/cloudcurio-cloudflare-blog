@@ -1,0 +1,37 @@
+{
+  "name": "cloudcurio-cloudflare-blog",
+  "version": "1.0.0",
+  "description": "A Cloudflare-powered blog and AI knowledge base platform",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name=cloudcurio-blog",
+    "deploy:all": "./deploy.sh",
+    "deploy:workers": "npm run deploy:blog-generator && npm run deploy:vectorizer && npm run deploy:research",
+    "deploy:blog-generator": "wrangler deploy --config wrangler-blog-generator.toml",
+    "deploy:vectorizer": "wrangler deploy --config wrangler-vectorize-processor.toml",
+    "deploy:research": "wrangler deploy --config wrangler-research-agent.toml",
+    "db:setup": "wrangler d1 execute knowledge_base --file=schema/schema.sql",
+    "db:seed": "wrangler d1 execute knowledge_base --file=schema/seed.sql",
+    "db:query": "wrangler d1 execute knowledge_base",
+    "build": "echo 'No build step required - static assets'",
+    "test": "echo 'Tests not yet implemented'",
+    "lint": "echo 'Linting not configured'",
+    "format": "echo 'Formatting not configured'"
+  },
+  "keywords": [
+    "cloudflare",
+    "blog",
+    "ai",
+    "rag",
+    "knowledge-base"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.78.0"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.0.0"
+  }
+}

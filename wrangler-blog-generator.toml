@@ -1,0 +1,25 @@
+name = "blog-generator"
+main = "src/workers/blog-generator.js"
+compatibility_date = "2024-10-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "knowledge_base"
+database_id = "local-db-id"
+
+# AI binding
+[ai]
+binding = "AI"
+
+# KV for cache invalidation
+[[kv_namespaces]]
+binding = "BLOG_CACHE"
+id = "local-kv-id"
+
+# Cron trigger for automatic blog generation
+[triggers]
+crons = ["0 0 * * *"]  # Daily at midnight UTC
+# Uncomment for other schedules:
+# crons = ["0 */6 * * *"]  # Every 6 hours
+# crons = ["0 12 * * 1"]   # Every Monday at noon
